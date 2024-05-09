@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Models\Post;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -93,6 +93,10 @@ class PostController extends Controller
         $post->title = $request->title;
 
         if ($request->hasFile('thumbnail')) {
+            if ($post->thumbnail) {
+                Storage::delete('thumbnails/' . $post->thumbnail);
+            }
+
             $thumbnail = $request->file('thumbnail');
             $filename = time() . '_' . $thumbnail->getClientOriginalName();
             $thumbnail->storeAs('thumbnails', $filename);
@@ -103,6 +107,7 @@ class PostController extends Controller
 
         return redirect()->route('posts.index');
     }
+
 
     /**
      * Remove the specified resource from storage.
