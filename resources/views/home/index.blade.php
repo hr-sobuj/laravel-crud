@@ -9,14 +9,14 @@
 <body class="font-sans antialiased bg-gray-100">
     <div class="container mx-auto px-4 py-8">
         <nav class="flex justify-between items-center">
-            <div class="flex space-x-1 justify-center items-center">
+            <a href="{{ route('home') }}" class="flex space-x-1 justify-center items-center">
                 <img src="https://laravel.com/img/logomark.min.svg" alt="Logo" class="h-8">
                 <img src="https://laravel.com/img/logotype.min.svg" alt="Laravel Logo" class="h-8">
-            </div>
+            </a>
             <div class="flex space-x-1">
                 @if (Route::has('login'))
                     @auth
-                        <a href="{{ url('/dashboard') }}" class="text-black hover:text-gray-700">Dashboard</a>
+                        <a href="{{ route('posts.index') }}" class="text-black hover:text-gray-700">Dashboard</a>
                     @else
                         <a href="{{ route('login') }}" class="text-black hover:text-gray-700">Log in</a>
                         <span>|</span>

@@ -3,13 +3,13 @@
         <nav class="font-semibold text-xl text-gray-300 dark:text-gray-100 leading-tight" aria-label="Breadcrumb">
             <ol class="flex items-center space-x-4">
                 <li>
-                    <a href="{{ route('dashboard') }}" class="text-blue-500 hover:text-blue-700 dark:text-blue-300 dark:hover:text-blue-500">Dashboard</a>
+                    <a href="{{ route('dashboard') }}">Dashboard</a>
                 </li>
                 <li>
                     <span aria-hidden="true" class="text-gray-400 dark:text-gray-300"> <span>&nbsp;</span> > <span>&nbsp;</span>  </span>
                 </li>
                 <li>
-                    <a href="{{ route('posts.index') }}" class="text-blue-500 hover:text-blue-700 dark:text-blue-300 dark:hover:text-blue-500">Home</a>
+                    <a href="{{ route('posts.index') }}">Home</a>
                 </li>
             </ol>
         </nav>
