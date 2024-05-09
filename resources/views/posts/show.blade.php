@@ -19,7 +19,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6">
-                <div class="bg-white dark:bg-gray-700 p-4 my-4 rounded-md shadow-md">
+                <div>
                     <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">{{ $post->title }}</h3>
                     @if ($post->thumbnail)
                         <img src="{{ asset('thumbnails/' . $post->thumbnail) }}" alt="{{ $post->title }}"
