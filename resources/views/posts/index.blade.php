@@ -34,22 +34,23 @@
                     </div>
                 </form>
 
-                <!-- Display posts here -->
                 @foreach ($posts as $post)
-                    <div class="bg-white dark:bg-gray-700 p-4 my-4 rounded-md shadow-md">
-                        <div class="flex justify-between items-center">
-                            <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">{{ $post->title }}</h3>
-                            <div class="flex space-x-2">
-                                <a href="{{ route('posts.edit', $post->id) }}" class="text-blue-500 hover:text-blue-700 text-blue-300 dark:hover:text-blue-500">Edit</a>
-                                <form action="{{ route('posts.destroy', $post->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="text-red-500 hover:text-red-700 dark:text-red-300 dark:hover:text-red-500">Delete</button>
-                                </form>
-                            </div>
+                <div class="bg-white dark:bg-gray-700 p-4 my-4 rounded-md shadow-md">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                            <a href="{{ route('posts.show', $post->id) }}" class="hover:text-blue-700 dark:hover:text-blue-500">{{ $post->title }}</a>
+                        </h3>
+                        <div class="flex space-x-2">
+                            <a href="{{ route('posts.edit', $post->id) }}" class=" hover:text-blue-700 text-blue-300 dark:hover:text-blue-500">Edit</a>
+                            <form action="{{ route('posts.destroy', $post->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="text-red-500 hover:text-red-700 dark:text-red-300 dark:hover:text-red-500">Delete</button>
+                            </form>
                         </div>
                     </div>
-                @endforeach
+                </div>
+            @endforeach
             </div>
         </div>
     </div>

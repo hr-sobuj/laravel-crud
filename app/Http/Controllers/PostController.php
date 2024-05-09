@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class PostController extends Controller
 {
@@ -52,10 +53,11 @@ class PostController extends Controller
         $post = new Post();
         $post->title = $request->title;
 
+
         if ($request->hasFile('thumbnail')) {
             $thumbnail = $request->file('thumbnail');
             $filename = time() . '_' . $thumbnail->getClientOriginalName();
-            $thumbnail->storeAs('thumbnails', $filename);
+            $thumbnail->move(public_path('thumbnails'), $filename);
             $post->thumbnail = $filename;
         }
 

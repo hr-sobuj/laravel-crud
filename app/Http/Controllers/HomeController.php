@@ -26,4 +26,9 @@ class HomeController extends Controller
 
         return view('home.index', ['posts' => $posts]);
     }
+
+    public function show(Post $post)
+    {
+        return view('home.show', ['post' => $post]);
+    }
 }
