@@ -1,9 +1,9 @@
-@props(['post', 'index'])
+@props(['post', 'index', 'showRoute'])
 
 <div class="bg-white dark:bg-gray-700 p-4 my-4 rounded-md shadow-md">
     <div class="flex justify-between items-center">
         <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
-            <a href="{{ route('posts.show', $post->id) }}" class="hover:text-red-700 dark:hover:text-red-500">
+            <a href="{{ route($showRoute, $post->id) }}" class="hover:text-red-700 dark:hover:text-red-500">
                 <span>{{ $index + 1 }}. </span>{{ $post->title }}</a>
         </h3>
         <div class="flex space-x-2">
