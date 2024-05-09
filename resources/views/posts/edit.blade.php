@@ -1,22 +1,8 @@
 <x-app-layout>
     <x-slot name="header">
-        <nav class="font-semibold text-xl text-gray-300 dark:text-gray-100 leading-tight" aria-label="Breadcrumb">
-            <ol class="flex items-center space-x-4">
-                <li>
-                    <a href="{{ route('dashboard') }}">Dashboard</a>
-                </li>
-                <li>
-                    <span aria-hidden="true" class="text-gray-400 dark:text-gray-300"> > </span>
-                </li>
-                <li>
-                    <a href="{{ route('posts.index') }}">Posts</a>
-                </li>
-                <li>
-                    <span aria-hidden="true" class="text-gray-400 dark:text-gray-300"> > </span>
-                </li>
-                <li>Edit Post</li>
-            </ol>
-        </nav>
+        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+            {{ __('Edit Post') }}
+        </h2>
     </x-slot>
 
     <div class="py-12 bg-gray-900 dark:bg-gray-800">
