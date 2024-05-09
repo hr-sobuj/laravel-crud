@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Models\Post;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 
 class PostController extends Controller
@@ -96,12 +95,15 @@ class PostController extends Controller
 
         if ($request->hasFile('thumbnail')) {
             if ($post->thumbnail) {
-                Storage::delete('thumbnails/' . $post->thumbnail);
+                $thumbnailPath = public_path('thumbnails/' . $post->thumbnail);
+                if (File::exists($thumbnailPath)) {
+                    File::delete($thumbnailPath);
+                }
             }
 
             $thumbnail = $request->file('thumbnail');
             $filename = time() . '_' . $thumbnail->getClientOriginalName();
-            $thumbnail->storeAs('thumbnails', $filename);
+            $thumbnail->move(public_path('thumbnails'), $filename);
             $post->thumbnail = $filename;
         }
 
@@ -116,6 +118,13 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
+        if ($post->thumbnail) {
+            $thumbnailPath = public_path('thumbnails/' . $post->thumbnail);
+            if (File::exists($thumbnailPath)) {
+                File::delete($thumbnailPath);
+            }
+        }
+
         $post->delete();
         return redirect()->route('posts.index');
     }
