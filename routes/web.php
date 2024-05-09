@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HomeController;
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -17,6 +17,10 @@ Route::middleware('auth')->group(function () {
     // post route
     Route::resource('posts', PostController::class);
 });
+
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('index');
 
 
 require __DIR__.'/auth.php';
