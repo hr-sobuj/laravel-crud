@@ -1,13 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Carbon\Carbon;
 use App\Models\Post;
-
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     */
     public function index(Request $request)
     {
         $query = Post::query();
@@ -27,6 +30,9 @@ class HomeController extends Controller
         return view('home.index', ['posts' => $posts]);
     }
 
+    /**
+     * Display the specified resource.
+     */
     public function show(Post $post)
     {
         return view('home.show', ['post' => $post]);
