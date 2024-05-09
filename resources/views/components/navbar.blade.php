@@ -1,6 +1,6 @@
 @props(['isLoggedIn'])
 
-<header class="bg-white dark:bg-gray-900 border-b border-gray-800 shadow">
+<header class="bg-white dark:bg-gray-900 border-b dark:border-gray-800">
     <nav class="flex justify-between items-center container mx-auto px-4 py-6">
         <a href="{{ route('home') }}" class="flex space-x-2 justify-center items-center">
             <img src="https://laravel.com/img/logotype.min.svg" alt="Laravel Logo" class="h-8">
