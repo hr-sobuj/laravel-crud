@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the posts.
      */
     public function index(Request $request)
     {
@@ -31,7 +31,7 @@ class HomeController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified post.
      */
     public function show(Post $post)
     {
