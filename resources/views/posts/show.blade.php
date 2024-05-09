@@ -5,6 +5,6 @@
         </h2>
     </x-slot>
 
-    <x-view-single-post :post="$post" :back="'home'" />
+    <x-view-single-post :post="$post" :back="'posts.index'" />
 
 </x-app-layout>
