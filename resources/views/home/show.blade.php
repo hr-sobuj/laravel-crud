@@ -10,25 +10,7 @@
 
 <body class="font-sans antialiased bg-gray-100">
     <div class="container mx-auto px-4 py-8">
-        <nav class="flex justify-between items-center">
-            <a href="{{ route('home') }}" class="flex space-x-1 justify-center items-center">
-                <img src="https://laravel.com/img/logomark.min.svg" alt="Logo" class="h-8">
-                <img src="https://laravel.com/img/logotype.min.svg" alt="Laravel Logo" class="h-8">
-            </a>
-            <div class="flex space-x-1">
-                @if (Route::has('login'))
-                    @auth
-                        <a href="{{ route('posts.index') }}" class="text-black hover:text-gray-700">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-black hover:text-gray-700">Log in</a>
-                        <span>|</span>
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="text-black hover:text-gray-700">Register</a>
-                        @endif
-                    @endauth
-                @endif
-            </div>
-        </nav>
+        <x-navbar :isLoggedIn="auth()->check()" />
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
