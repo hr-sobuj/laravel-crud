@@ -1,8 +1,5 @@
-@extends('layouts/home')
-
-@section('content')
-@php $showFilter = true; @endphp
+<x-layouts.home :showFilter="true">
     @foreach ($posts as $idx => $post)
         <x-view-post :post="$post" :index="$idx" :showRoute="'show'" />
     @endforeach
-@endsection
+</x-layouts.home>

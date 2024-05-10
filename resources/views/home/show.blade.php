@@ -1,5 +1,3 @@
-@extends('layouts/home')
-
-@section('content')
+<x-layouts.home>
     <x-view-single-post :post="$post" :back="'home'" />
-@endsection
+</x-layouts.home>
