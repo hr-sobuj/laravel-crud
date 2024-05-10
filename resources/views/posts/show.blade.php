@@ -4,7 +4,7 @@
             {{ __('Home') }}
         </h2>
     </x-slot>
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 py-8">
+    <div class="container mt-7">
         <x-view-single-post :post="$post" :back="'posts.index'" />
     </div>
 
