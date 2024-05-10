@@ -9,7 +9,7 @@
         <div class="flex space-x-2">
             @auth
                 <a href="{{ route('posts.edit', $post->id) }}"
-                    class="hover:text-lime-700 text-lime-300 dark:hover:text-lime-500">
+                    class="hover:text-lime-700 text-lime-600 dark:hover:text-lime-500">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round"

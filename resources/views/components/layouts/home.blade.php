@@ -25,16 +25,15 @@
     <x-navbar :isLoggedIn="auth()->check()" />
 
     <div class="container mx-auto px-4 py-8">
+        <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6">
+            @if ($showFilter ?? false)
+                <x-filter action="{{ route('home') }}" />
+            @endif
 
-        @if ($showFilter ?? false)
-            <x-filter action="{{ route('home') }}" />
-        @endif
-
-
-        <div class="mt-8">
-            {{ $slot }}
+            <div>
+                {{ $slot }}
+            </div>
         </div>
-
     </div>
 </body>
 
