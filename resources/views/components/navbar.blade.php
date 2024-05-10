@@ -5,7 +5,7 @@
         <a href="{{ route('home') }}" class="flex space-x-2 justify-center items-center">
             <img src="https://laravel.com/img/logotype.min.svg" alt="Laravel Logo" class="h-8">
         </a>
-        <div class="flex space-x-1">
+        <div class="flex space-x-3">
             @if ($isLoggedIn)
                 <a href="{{ route('posts.index') }}" class="bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded dark:bg-teal-800 dark:hover:bg-teal-700">Dashboard</a>
             @else

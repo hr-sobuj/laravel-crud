@@ -4,7 +4,8 @@
             {{ __('Home') }}
         </h2>
     </x-slot>
-
-    <x-view-single-post :post="$post" :back="'posts.index'" />
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 py-8">
+        <x-view-single-post :post="$post" :back="'posts.index'" />
+    </div>
 
 </x-app-layout>

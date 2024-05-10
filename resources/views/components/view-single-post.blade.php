@@ -1,6 +1,6 @@
 @props(['post','back'])
 
-<div class="container flex flex-col space-y-3">
+<div class="flex flex-col space-y-3">
     <div class="flex justify-start">
         <a href="{{ route($back) }}" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-300 flex justify-center items-center space-x-3">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
